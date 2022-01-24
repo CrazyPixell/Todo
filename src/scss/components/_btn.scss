@@ -1,0 +1,46 @@
+.btn {
+  cursor: pointer;
+
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-text-fade);
+  border-radius: 50%;
+
+  background: transparent;
+
+  transition: all 0.5s ease;
+
+  &::after {
+    content: url(../img/icon-check.svg);
+    opacity: 0;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      120deg,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
+.delete-btn {
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+
+  transition: all 0.5s ease;
+
+  & svg path {
+    fill: var(--color-text);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

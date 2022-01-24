@@ -1,0 +1,18 @@
+:root {
+  --ff-main: 'Josefin Sans', sans-serif;
+  --color-accent: hsl(220, 98%, 61%);
+}
+
+.light-theme {
+  --color-text: hsl(235, 19%, 35%);
+  --color-text-fade: hsl(236, 9%, 61%);
+  --color-content-bg: hsl(0, 0%, 98%);
+  --color-main-bg: hsl(236, 33%, 92%);
+}
+
+.dark-theme {
+  --color-text: hsl(236, 33%, 92%);
+  --color-text-fade: hsl(234, 11%, 52%);
+  --color-content-bg: hsl(235, 24%, 19%);
+  --color-main-bg: hsl(235, 21%, 11%);
+}

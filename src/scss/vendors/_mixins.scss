@@ -1,0 +1,103 @@
+// Box dimensions
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Flex
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+// Fonts
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+  font-size: $font-size;
+
+  @if $line-height==normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height / $font-size;
+  }
+
+  @if $letter-spacing==normal {
+    letter-spacing: normal;
+  } @else {
+    letter-spacing: #{$letter-spacing / $font-size}em;
+  }
+}
+
+// Background
+@mixin background-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// Pseudo elements
+@mixin pseudo(
+  $width: 100%,
+  $height: 100%,
+  $display: inline-block,
+  $pos: absolute,
+  $content: ''
+) {
+  content: $content;
+  display: $display;
+  position: $pos;
+  @include box($width, $height);
+}
+
+// Responsive
+@mixin responsive-max($bp) {
+  @media only screen and (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin responsive-min($bp) {
+  @media only screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+// Transtition
+@mixin transit($tr: 0.2, $timing-func) {
+  transition: all #{$tr}s $timing-func;
+}
+
+// Links
+@mixin link() {
+  &:link,
+  &:visited {
+    @content;
+  }
+}
+
+@mixin link-hover() {
+  &:hover,
+  &:active {
+    @content;
+  }
+}

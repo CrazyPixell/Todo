@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  @@include('html/head.html', { "title": 'Todo || Frontend Mentor', })
+  <body class="light-theme">
+    <header class="header">
+      <div class="header__container">
+        <h1 class="header__title">Todo</h1>
+        <button class="header__theme-switcher"></button>
+        <form class="header__todo-form">
+          <button class="btn btn--add"></button>
+          <input
+            type="text"
+            class="header__todo-input"
+            placeholder="Create a new todo..."
+          />
+        </form>
+      </div>
+    </header>
+
+    <main class="todo">
+      <ul class="todo__list">
+        <li class="todo__misc">
+          <span>0 items left</span>
+          <div class="todo__options todo__options--desktop">
+            <button class="todo__option todo__option--active all">All</button>
+            <button class="todo__option active">Active</button>
+            <button class="todo__option completed">Completed</button>
+          </div>
+          <button class="todo__clear">Clear completed</button>
+        </li>
+      </ul>
+
+      <div class="todo__options">
+        <button class="todo__option todo__option--active">All</button>
+        <button class="todo__option">Active</button>
+        <button class="todo__option">Completed</button>
+      </div>
+    </main>
+
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
